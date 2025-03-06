@@ -14,7 +14,7 @@ struct LaunchScreenView: View {
     @State private var secondPhaseIsAnimating: Bool = false
     
     private let timer = Timer.publish(
-        every: 0.65,
+        every: 0.45,
         on: .main,
         in: .common
     ).autoconnect()

@@ -30,7 +30,7 @@ struct FoodieApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
-                ContentView()
+                LoginView()
                 
                 if launchScreenManager.state != .completed {
                     LaunchScreenView()
