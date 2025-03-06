@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,9 +18,18 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+        .onAppear {
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                launchScreenManager.dismiss()
+            }
+        }
     }
+    
 }
+
 
 #Preview {
     ContentView()
+        .environmentObject(LaunchScreenManager())
 }

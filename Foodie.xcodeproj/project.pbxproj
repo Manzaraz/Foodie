@@ -6,23 +6,39 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		6110D6932D78ACB5007B4254 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6110D6902D78ACB5007B4254 /* ContentView.swift */; };
+		6110D6942D78ACB5007B4254 /* FoodieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6110D6912D78ACB5007B4254 /* FoodieApp.swift */; };
+		6110D6952D78ACB5007B4254 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6110D68D2D78ACB5007B4254 /* Preview Assets.xcassets */; };
+		6110D6962D78ACB5007B4254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6110D68F2D78ACB5007B4254 /* Assets.xcassets */; };
+		6110D69A2D78C2DC007B4254 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D6992D78C2DC007B4254 /* FirebaseAuth */; };
+		6110D69C2D78C2DC007B4254 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69B2D78C2DC007B4254 /* FirebaseFirestore */; };
+		6110D69E2D78C2DC007B4254 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69D2D78C2DC007B4254 /* FirebaseStorage */; };
+		6110D6A02D78C34A007B4254 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */; };
+		6169C5BA2D7924F0003E948F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5B92D7924F0003E948F /* LaunchScreenView.swift */; };
+		6169C5BC2D792FEF003E948F /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		6110D67C2D78AC5A007B4254 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6110D68D2D78ACB5007B4254 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		6110D68F2D78ACB5007B4254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6110D6902D78ACB5007B4254 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		6110D6912D78ACB5007B4254 /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
+		6110D6972D78B0A6007B4254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6169C5B92D7924F0003E948F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
+		6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		6110D67E2D78AC5A007B4254 /* Foodie */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = Foodie;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		6110D6792D78AC5A007B4254 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6110D69A2D78C2DC007B4254 /* FirebaseAuth in Frameworks */,
+				6110D69C2D78C2DC007B4254 /* FirebaseFirestore in Frameworks */,
+				6110D69E2D78C2DC007B4254 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,7 +48,7 @@
 		6110D6732D78AC5A007B4254 = {
 			isa = PBXGroup;
 			children = (
-				6110D67E2D78AC5A007B4254 /* Foodie */,
+				6110D6922D78ACB5007B4254 /* Foodie */,
 				6110D67D2D78AC5A007B4254 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -43,6 +59,37 @@
 				6110D67C2D78AC5A007B4254 /* Foodie.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		6110D68E2D78ACB5007B4254 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				6110D68D2D78ACB5007B4254 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		6110D6922D78ACB5007B4254 /* Foodie */ = {
+			isa = PBXGroup;
+			children = (
+				6110D6972D78B0A6007B4254 /* Info.plist */,
+				6110D68E2D78ACB5007B4254 /* Preview Content */,
+				6110D6902D78ACB5007B4254 /* ContentView.swift */,
+				6110D6912D78ACB5007B4254 /* FoodieApp.swift */,
+				6169C5BD2D793000003E948F /* LaunchScreen */,
+				6110D68F2D78ACB5007B4254 /* Assets.xcassets */,
+				6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */,
+			);
+			path = Foodie;
+			sourceTree = "<group>";
+		};
+		6169C5BD2D793000003E948F /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				6169C5B92D7924F0003E948F /* LaunchScreenView.swift */,
+				6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -60,11 +107,11 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				6110D67E2D78AC5A007B4254 /* Foodie */,
-			);
 			name = Foodie;
 			packageProductDependencies = (
+				6110D6992D78C2DC007B4254 /* FirebaseAuth */,
+				6110D69B2D78C2DC007B4254 /* FirebaseFirestore */,
+				6110D69D2D78C2DC007B4254 /* FirebaseStorage */,
 			);
 			productName = Foodie;
 			productReference = 6110D67C2D78AC5A007B4254 /* Foodie.app */;
@@ -94,6 +141,9 @@
 			);
 			mainGroup = 6110D6732D78AC5A007B4254;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				6110D6982D78C2DC007B4254 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 6110D67D2D78AC5A007B4254 /* Products */;
 			projectDirPath = "";
@@ -109,6 +159,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6110D6952D78ACB5007B4254 /* Preview Assets.xcassets in Resources */,
+				6110D6962D78ACB5007B4254 /* Assets.xcassets in Resources */,
+				6110D6A02D78C34A007B4254 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6110D6932D78ACB5007B4254 /* ContentView.swift in Sources */,
+				6110D6942D78ACB5007B4254 /* FoodieApp.swift in Sources */,
+				6169C5BC2D792FEF003E948F /* LaunchScreenManager.swift in Sources */,
+				6169C5BA2D7924F0003E948F /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +312,9 @@
 				DEVELOPMENT_TEAM = 4FXJ5W7FM5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -284,9 +341,9 @@
 				DEVELOPMENT_TEAM = 4FXJ5W7FM5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Foodie/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -324,6 +381,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6110D6982D78C2DC007B4254 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.9.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6110D6992D78C2DC007B4254 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6110D6982D78C2DC007B4254 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		6110D69B2D78C2DC007B4254 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6110D6982D78C2DC007B4254 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		6110D69D2D78C2DC007B4254 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6110D6982D78C2DC007B4254 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6110D6742D78AC5A007B4254 /* Project object */;
 }
