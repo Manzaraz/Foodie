@@ -9,12 +9,24 @@ import SwiftUI
 import Firebase
 import FirebaseAuth
 
+
+
 struct LoginView: View {
+    enum Field {
+        case email, password
+    }
+    
     @EnvironmentObject var launchScreenManager: LaunchScreenManager
+    
     @State private var email = ""
     @State private var password = ""
     @State private var showingAlert = false
     @State private var alertMessage = ""
+    @State private var buttonDisabled = true
+    @State private var isValidEmail = false
+    @State private var isValidPassword = false
+    
+    @FocusState private var focusField: Field?
     
     
     var body: some View {
@@ -33,9 +45,33 @@ struct LoginView: View {
                         .autocorrectionDisabled()
                         .textInputAutocapitalization(.never)
                         .submitLabel(.next)
+                        .focused($focusField, equals: .email)
+                        .onSubmit { focusField = .password }
+                        .onChange(of: email) {
+                            enableButtons()
+                            isValidEmail = validateEmail(email)
+                        }
+                    
+                    if !email.isEmpty && !isValidEmail {
+                        Text("Invalid email address")
+                            .foregroundStyle(.red)
+                            .font(.subheadline)
+                    }
                         
                     SecureField("password", text: $password)
                         .submitLabel(.done)
+                        .focused($focusField, equals: .password)
+                        .onSubmit { focusField = nil }
+                        .onChange(of: password) {
+                            enableButtons()
+                            isValidPassword = validatePassword(password)
+                        }
+                    
+                    if !password.isEmpty && !isValidPassword {
+                        Text("Password must have more than 6 characters and have a lowercase and uppercase letter and a number")
+                            .foregroundStyle(.red)
+                            .font(.subheadline)
+                    }
                 }
                 .textFieldStyle(.roundedBorder)
                 .overlay {
@@ -58,7 +94,7 @@ struct LoginView: View {
                 .tint(.foodie)
                 .font(.title)
                 .padding(.top)
-                
+                .disabled(buttonDisabled)
                 
             }
             .padding()
@@ -74,9 +110,6 @@ struct LoginView: View {
             }
         }
     }
-    
-    
-    
 }
 
 
@@ -113,5 +146,23 @@ extension LoginView {
                 // TODO: Load ListView
             }
         }
+    }
+    
+    func validateEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
+        
+        return emailTest.evaluate(with: email)
+    }
+    
+    func validatePassword(_ password: String) -> Bool {
+        let passwordRegEx = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,12}$"
+        let passwordTest = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
+        
+        return passwordTest.evaluate(with: password)
+    }
+    
+    func enableButtons() {
+        buttonDisabled = !(isValidEmail && isValidPassword)
     }
 }
