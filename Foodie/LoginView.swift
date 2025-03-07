@@ -26,13 +26,14 @@ struct LoginView: View {
     @State private var isValidEmail = false
     @State private var isValidPassword = false
     @State private var showPassword = false
+    @State private var presentSheet = false
     
     @FocusState private var focusField: Field?
     
     
     var body: some View {
         ZStack {
-            Color("ScreenBg")
+            LinearGradient(colors: [ Color(.systemBackground), Color(.screenBg).opacity(0.4), Color(.screenBg)], startPoint: .top, endPoint: .bottom)
                 .ignoresSafeArea()
             
             
@@ -71,7 +72,7 @@ struct LoginView: View {
                     
                     if !email.isEmpty && !isValidEmail {
                         Text("Invalid email address")
-                            .foregroundStyle(Color(.systemOrange))
+                            .foregroundStyle(Color(.systemYellow))
                             .font(.subheadline)
                     }
                         
@@ -136,7 +137,7 @@ struct LoginView: View {
                     
                     if !password.isEmpty && !isValidPassword {
                         Text("Password must have more than 6 characters and have a lowercase and uppercase letter and a number")
-                            .foregroundStyle(Color(.systemOrange))
+                            .foregroundStyle(Color(.systemYellow))
                             .font(.subheadline)
                             .padding(.horizontal, 10)
                     }
@@ -171,6 +172,15 @@ struct LoginView: View {
                     
                 }
             }
+            .onAppear() {
+                if Auth.auth().currentUser != nil { // If we're logged in...
+                    print("😉Already Logged")
+                    presentSheet = true
+                }
+            }
+            .fullScreenCover(isPresented: $presentSheet) {
+                ListView()
+            }
         }
     }
 }
@@ -192,7 +202,7 @@ extension LoginView {
                 showingAlert = true
             } else {
                 print("😎Registration Success!")
-                // TODO: Load ListView
+                presentSheet = true
             }
         }
     }
@@ -206,7 +216,7 @@ extension LoginView {
                 showingAlert = true
             } else {
                 print("😎Login Success!")
-                // TODO: Load ListView
+                presentSheet = true
             }
         }
     }
