@@ -25,58 +25,121 @@ struct LoginView: View {
     @State private var buttonDisabled = true
     @State private var isValidEmail = false
     @State private var isValidPassword = false
+    @State private var showPassword = false
     
     @FocusState private var focusField: Field?
     
     
     var body: some View {
         ZStack {
-            Color("launchScreenBg")
+            Color("ScreenBg")
                 .ignoresSafeArea()
+            
             
             VStack {
                 Image("logoIcon")
+                    .renderingMode(.template)
                     .resizable()
                     .scaledToFit()
+                    .foregroundStyle(.accent)
                     
                 Group {
-                    TextField("email", text: $email)
-                        .keyboardType(.emailAddress)
-                        .autocorrectionDisabled()
-                        .textInputAutocapitalization(.never)
-                        .submitLabel(.next)
-                        .focused($focusField, equals: .email)
-                        .onSubmit { focusField = .password }
-                        .onChange(of: email) {
-                            enableButtons()
-                            isValidEmail = validateEmail(email)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 50)
+                            .frame(maxHeight: 40, alignment: .center)
+                            .foregroundStyle(Color(.fieldBg))
+                        
+                        HStack {
+                            Image(systemName: "pencil.and.scribble")
+                                .foregroundStyle(Color.accentColor)
+                                .font(.system(.subheadline, weight: .bold))
+                                .padding()
+                            
+                            TextField("Enter your email", text: $email)
+                                .keyboardType(.emailAddress)
+                                .autocorrectionDisabled()
+                                .textInputAutocapitalization(.never)
+                                .submitLabel(.next)
+                                .focused($focusField, equals: .email)
+                                .onSubmit { focusField = .password }
+                                .onChange(of: email) {
+                                    enableButtons()
+                                    isValidEmail = validateEmail(email)
+                                }
                         }
+                    }
                     
                     if !email.isEmpty && !isValidEmail {
                         Text("Invalid email address")
-                            .foregroundStyle(.red)
+                            .foregroundStyle(Color(.systemOrange))
                             .font(.subheadline)
                     }
                         
-                    SecureField("password", text: $password)
-                        .submitLabel(.done)
-                        .focused($focusField, equals: .password)
-                        .onSubmit { focusField = nil }
-                        .onChange(of: password) {
-                            enableButtons()
-                            isValidPassword = validatePassword(password)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color.fieldBg)
+                            .frame(maxHeight: 40, alignment: .center)
+                        
+                        HStack {
+                            if !showPassword {
+                                Spacer()
+                            }
+                            
+                            RoundedRectangle(cornerRadius: showPassword ? 25.0 : 50.0)
+                                .frame(maxWidth: showPassword ? .infinity : 0, maxHeight: showPassword ? 65 : 40, alignment: .center)
+                                .animation(.linear(duration: 0.2), value: showPassword)
+                                .padding(.trailing, showPassword ? 0 : 12)
                         }
+                        
+                        HStack {
+                            Image(systemName: "lock")
+                                .foregroundStyle(Color.accentColor)
+                                .font(.system(.subheadline, weight: .bold))
+                                .padding()
+                            
+                            if showPassword {
+                                TextField("Write your password", text: $password)
+                                    .foregroundStyle(Color.accentColor)
+                                    .autocorrectionDisabled()
+                                    .textInputAutocapitalization(.never)
+                                    .submitLabel(.done)
+                                    .focused($focusField, equals: .password)
+                                    .onSubmit { focusField = nil }
+                                    .onChange(of: password) {
+                                        enableButtons()
+                                        isValidPassword = validatePassword(password)
+                                    }
+                            } else {
+                                SecureField("Write your password", text: $password)
+                                    .autocorrectionDisabled()
+                                    .textInputAutocapitalization(.never)
+                                    .submitLabel(.done)
+                                    .focused($focusField, equals: .password)
+                                    .onSubmit { focusField = nil }
+                                    .onChange(of: password) {
+                                        enableButtons()
+                                        isValidPassword = validatePassword(password)
+                                    }
+                            }
+                            
+                            Button {
+                                showPassword.toggle()
+                            } label: {
+                                Image(systemName: showPassword ? "eye" : "eye.slash")
+                                    .foregroundStyle(Color.accentColor)
+                                    .font(.system(.subheadline, weight: .bold))
+                                    .padding(.trailing)
+                            }
+
+                        }
+                    }
                     
                     if !password.isEmpty && !isValidPassword {
                         Text("Password must have more than 6 characters and have a lowercase and uppercase letter and a number")
-                            .foregroundStyle(.red)
+                            .foregroundStyle(Color(.systemOrange))
                             .font(.subheadline)
+                            .padding(.horizontal, 10)
                     }
-                }
-                .textFieldStyle(.roundedBorder)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(.gray.opacity(0.5), lineWidth: 2)
                 }
                 
                 HStack (spacing: 30) {
@@ -91,7 +154,7 @@ struct LoginView: View {
                     
                 }
                 .buttonStyle(.borderedProminent)
-                .tint(.foodie)
+                .tint(.accent)
                 .font(.title)
                 .padding(.top)
                 .disabled(buttonDisabled)

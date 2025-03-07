@@ -54,7 +54,7 @@ struct LaunchScreenView: View {
 
 private extension LaunchScreenView {
     var background: some View {
-        Color("launchScreenBg")
+        Color("ScreenBg")
             .edgesIgnoringSafeArea(.all)
     }
     

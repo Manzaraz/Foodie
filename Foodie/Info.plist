@@ -5,7 +5,7 @@
 	<key>UILaunchScreen</key>
 	<dict>
 		<key>UIColorName</key>
-		<string>launchScreenBg</string>
+		<string>ScreenBg</string>
 		<key>UIImageName</key>
 		<string>logoIcon</string>
 		<key>UIImageRespectsSafeAreaInsets</key>
