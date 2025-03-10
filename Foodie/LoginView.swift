@@ -33,9 +33,7 @@ struct LoginView: View {
     
     var body: some View {
         ZStack {
-            LinearGradient(colors: [ Color(.systemBackground), Color(.screenBg).opacity(0.4), Color(.screenBg)], startPoint: .top, endPoint: .bottom)
-                .ignoresSafeArea()
-            
+            BackgroundView()
             
             VStack {
                 Image("logoIcon")
@@ -239,3 +237,5 @@ extension LoginView {
         buttonDisabled = !(isValidEmail && isValidPassword)
     }
 }
+
+
