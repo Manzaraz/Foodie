@@ -19,6 +19,7 @@
 		6110D69C2D78C2DC007B4254 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69B2D78C2DC007B4254 /* FirebaseFirestore */; };
 		6110D69E2D78C2DC007B4254 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69D2D78C2DC007B4254 /* FirebaseStorage */; };
 		6110D6A02D78C34A007B4254 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */; };
+		6127F33F2D81D41E00A98886 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6127F33E2D81D41E00A98886 /* PhotoView.swift */; };
 		6169C5BA2D7924F0003E948F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5B92D7924F0003E948F /* LaunchScreenView.swift */; };
 		6169C5BC2D792FEF003E948F /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */; };
 		619988532D7BF87D00E03E6F /* SpotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619988522D7BF87C00E03E6F /* SpotViewModel.swift */; };
@@ -36,6 +37,7 @@
 		6110D6912D78ACB5007B4254 /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
 		6110D6972D78B0A6007B4254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6127F33E2D81D41E00A98886 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		6169C5B92D7924F0003E948F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
 		619988522D7BF87C00E03E6F /* SpotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotViewModel.swift; sourceTree = "<group>"; };
@@ -83,12 +85,9 @@
 			isa = PBXGroup;
 			children = (
 				6110D6912D78ACB5007B4254 /* FoodieApp.swift */,
-				610C3A832D7BB85500085DB6 /* Spot.swift */,
-				6110D6902D78ACB5007B4254 /* LoginView.swift */,
-				610C3A812D7B40D900085DB6 /* ListView.swift */,
-				610C3A852D7BC6CD00085DB6 /* SpotDetailView.swift */,
-				619988522D7BF87C00E03E6F /* SpotViewModel.swift */,
-				610C3A872D7BC83B00085DB6 /* AuxViews.swift */,
+				6127F33B2D81D24A00A98886 /* ViewModel */,
+				6127F33C2D81D25600A98886 /* Model */,
+				6127F33D2D81D25F00A98886 /* Views */,
 				6169C5BD2D793000003E948F /* LaunchScreen */,
 				6110D68F2D78ACB5007B4254 /* Assets.xcassets */,
 				6110D6972D78B0A6007B4254 /* Info.plist */,
@@ -96,6 +95,34 @@
 				6110D68E2D78ACB5007B4254 /* Preview Content */,
 			);
 			path = Foodie;
+			sourceTree = "<group>";
+		};
+		6127F33B2D81D24A00A98886 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				619988522D7BF87C00E03E6F /* SpotViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6127F33C2D81D25600A98886 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				610C3A832D7BB85500085DB6 /* Spot.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6127F33D2D81D25F00A98886 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6110D6902D78ACB5007B4254 /* LoginView.swift */,
+				610C3A812D7B40D900085DB6 /* ListView.swift */,
+				610C3A852D7BC6CD00085DB6 /* SpotDetailView.swift */,
+				6127F33E2D81D41E00A98886 /* PhotoView.swift */,
+				610C3A872D7BC83B00085DB6 /* AuxViews.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		6169C5BD2D793000003E948F /* LaunchScreen */ = {
@@ -190,6 +217,7 @@
 				6110D6932D78ACB5007B4254 /* LoginView.swift in Sources */,
 				610C3A842D7BB85500085DB6 /* Spot.swift in Sources */,
 				610C3A882D7BC83B00085DB6 /* AuxViews.swift in Sources */,
+				6127F33F2D81D41E00A98886 /* PhotoView.swift in Sources */,
 				6110D6942D78ACB5007B4254 /* FoodieApp.swift in Sources */,
 				610C3A822D7B40D900085DB6 /* ListView.swift in Sources */,
 				619988532D7BF87D00E03E6F /* SpotViewModel.swift in Sources */,
