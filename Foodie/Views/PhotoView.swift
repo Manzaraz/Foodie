@@ -28,6 +28,12 @@ struct PhotoView: View {
             
             Spacer()
             
+            TextField("Description", text: $photo.description)
+                .textInputAutocapitalization(.sentences)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                
+            
             Text("by: \(photo.reviewer), on: \(photo.postedOn.formatted(date: .numeric, time: .omitted))")
             
                 .toolbar {
