@@ -32,8 +32,6 @@ struct PhotoView: View {
                 .textInputAutocapitalization(.sentences)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 
-                
-            
             Text("by: \(photo.reviewer), on: \(photo.postedOn.formatted(date: .numeric, time: .omitted))")
             
                 .toolbar {

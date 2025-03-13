@@ -16,3 +16,12 @@ struct Spot: Identifiable, Codable {
     
     
 }
+
+
+extension Spot {
+    static var preview: Spot {
+        let newSpot = Spot(id: "1", name: "Beans Coffee Co.", address: "Tucumán, Argentina")
+        
+        return newSpot
+    }
+}

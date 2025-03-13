@@ -10,13 +10,22 @@ import Firebase
 import FirebaseFirestore
 
 struct SpotDetailView: View {
-    @FirestoreQuery(collectionPath: "spots") var photos: [Photo]
+    @FirestoreQuery(collectionPath: "spots") var fsPhotos: [Photo]
     @State var spot: Spot //  pass in value from ListView
     @State private var photoSheetIsPresented = false
     @State private var showingAlert = false // Alert user if they need to save Spot before adding a photo
     @State private var alertMessage = "Cannot add a Photo until you save the Spot."
     
     @Environment(\.dismiss) private var dismiss
+    
+    private var photos: [Photo] {
+        if ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1" { // If running in Preview then show mock dtata
+            return [Photo.preview, Photo.preview, Photo.preview, Photo.preview, Photo.preview, Photo.preview]
+        }
+        
+        // Else show Firebase Data
+        return fsPhotos
+    }
     
     var body: some View {
         VStack {
@@ -76,7 +85,7 @@ struct SpotDetailView: View {
         .background { BackgroundView() }
         .navigationBarBackButtonHidden()
         .task {
-            $photos.path = "spots/\(spot.id ?? "")/photos"
+            $fsPhotos.path = "spots/\(spot.id ?? "")/photos"
         }
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
@@ -119,7 +128,7 @@ struct SpotDetailView: View {
 
 #Preview {
     NavigationStack {
-        SpotDetailView(spot: Spot(id: "1", name: "Beans Coffee", address: "Yerba Buena"))
+        SpotDetailView(spot: Spot.preview)
     }
 }
 

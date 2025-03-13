@@ -20,7 +20,7 @@ class Photo: Identifiable, Codable {
         id: String? = nil,
         imageURLString: String = "",
         description: String = "",
-        reviewer: String = "",
+        reviewer: String = (Auth.auth().currentUser?.email ?? ""),
         postedOn: Date = Date()
     ) {
         self.id = id
