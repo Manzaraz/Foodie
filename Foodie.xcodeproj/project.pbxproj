@@ -18,7 +18,9 @@
 		6110D69A2D78C2DC007B4254 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D6992D78C2DC007B4254 /* FirebaseAuth */; };
 		6110D69C2D78C2DC007B4254 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69B2D78C2DC007B4254 /* FirebaseFirestore */; };
 		6110D69E2D78C2DC007B4254 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 6110D69D2D78C2DC007B4254 /* FirebaseStorage */; };
-		6110D6A02D78C34A007B4254 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */; };
+		6115F9342D831C6E00122B8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6115F9332D831C6E00122B8E /* GoogleService-Info.plist */; };
+		6115F9362D8323C100122B8E /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115F9352D8323C100122B8E /* Photo.swift */; };
+		6115F9382D83248700122B8E /* PhotoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6115F9372D83248700122B8E /* PhotoViewModel.swift */; };
 		6127F33F2D81D41E00A98886 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6127F33E2D81D41E00A98886 /* PhotoView.swift */; };
 		6169C5BA2D7924F0003E948F /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5B92D7924F0003E948F /* LaunchScreenView.swift */; };
 		6169C5BC2D792FEF003E948F /* LaunchScreenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */; };
@@ -36,7 +38,9 @@
 		6110D6902D78ACB5007B4254 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		6110D6912D78ACB5007B4254 /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
 		6110D6972D78B0A6007B4254 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6115F9332D831C6E00122B8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6115F9352D8323C100122B8E /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		6115F9372D83248700122B8E /* PhotoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewModel.swift; sourceTree = "<group>"; };
 		6127F33E2D81D41E00A98886 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		6169C5B92D7924F0003E948F /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		6169C5BB2D792FEF003E948F /* LaunchScreenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenManager.swift; sourceTree = "<group>"; };
@@ -91,7 +95,7 @@
 				6169C5BD2D793000003E948F /* LaunchScreen */,
 				6110D68F2D78ACB5007B4254 /* Assets.xcassets */,
 				6110D6972D78B0A6007B4254 /* Info.plist */,
-				6110D69F2D78C34A007B4254 /* GoogleService-Info.plist */,
+				6115F9332D831C6E00122B8E /* GoogleService-Info.plist */,
 				6110D68E2D78ACB5007B4254 /* Preview Content */,
 			);
 			path = Foodie;
@@ -101,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				619988522D7BF87C00E03E6F /* SpotViewModel.swift */,
+				6115F9372D83248700122B8E /* PhotoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -109,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				610C3A832D7BB85500085DB6 /* Spot.swift */,
+				6115F9352D8323C100122B8E /* Photo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,7 +209,7 @@
 			files = (
 				6110D6952D78ACB5007B4254 /* Preview Assets.xcassets in Resources */,
 				6110D6962D78ACB5007B4254 /* Assets.xcassets in Resources */,
-				6110D6A02D78C34A007B4254 /* GoogleService-Info.plist in Resources */,
+				6115F9342D831C6E00122B8E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,12 +221,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				6110D6932D78ACB5007B4254 /* LoginView.swift in Sources */,
+				6115F9382D83248700122B8E /* PhotoViewModel.swift in Sources */,
 				610C3A842D7BB85500085DB6 /* Spot.swift in Sources */,
 				610C3A882D7BC83B00085DB6 /* AuxViews.swift in Sources */,
 				6127F33F2D81D41E00A98886 /* PhotoView.swift in Sources */,
 				6110D6942D78ACB5007B4254 /* FoodieApp.swift in Sources */,
 				610C3A822D7B40D900085DB6 /* ListView.swift in Sources */,
 				619988532D7BF87D00E03E6F /* SpotViewModel.swift in Sources */,
+				6115F9362D8323C100122B8E /* Photo.swift in Sources */,
 				610C3A862D7BC6CD00085DB6 /* SpotDetailView.swift in Sources */,
 				6169C5BC2D792FEF003E948F /* LaunchScreenManager.swift in Sources */,
 				6169C5BA2D7924F0003E948F /* LaunchScreenView.swift in Sources */,
